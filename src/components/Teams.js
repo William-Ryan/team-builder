@@ -5,8 +5,10 @@ const Teams = props => {
         <div className="team-list">
             {props.teams.map(team => (
                 <div className="team" key={team.id}>
-                    <h2>{team.name}</h2>
-                    <p>{team.role}</p>
+                    <h2>Name: {team.name}</h2>
+                    <p>Email: {team.email}</p>
+                    <p>Role: {team.role}</p>
+                    <button>Edit Member</button>
                 </div>
             ))}
         </div>
