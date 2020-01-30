@@ -3,24 +3,28 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
+  const [teams, setTeams] = useState([
+    {
+      id: 1,
+      name: "William",
+      role: "Team Captain"
+    }
+  ]);
+
+  const addNewMember = team => {
+    const newMember = {
+      id: Date.now(),
+      name: team.name,
+      role: team.role
+    };
+    setTeams([...teams, newMember]);
+  };
+  
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My Team</h1>
     </div>
-  );
+  )
 }
 
 export default App;
