@@ -1,6 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ReactDom from "react-dom";
+
+import Teams from "./components/Teams";
+import TeamForm from "./components/TeamForm"
 
 function App() {
   const [teams, setTeams] = useState([
@@ -23,6 +25,8 @@ function App() {
   return(
     <div className="App">
       <h1>My Team</h1>
+      <TeamForm addNewMember={addNewMember} />
+      <Teams teams={teams} />
     </div>
   )
 }
